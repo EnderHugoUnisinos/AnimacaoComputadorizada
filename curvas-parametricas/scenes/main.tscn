@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cokl4qm0buua4"]
+
+[ext_resource type="Script" uid="uid://byt0k0cnwsm03" path="res://scripts/LinearCurve.cs" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://bnr14gy656ywe" path="res://scripts/Main.cs" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://bek2qrmhut6sg" path="res://scripts/CatmullRomCurve.cs" id="2_tefeu"]
+[ext_resource type="Script" uid="uid://dvslh7ggskew8" path="res://scripts/BezierCurve.cs" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://6ekxaewn2jxc" path="res://assets/control_point.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://b1ddjujaa0htv" path="res://assets/curve_point.tscn" id="4_85g3d"]
+[ext_resource type="Script" uid="uid://b7chwvg5wx0w6" path="res://scripts/Pointer.cs" id="4_tipki"]
+[ext_resource type="Script" uid="uid://ci0t252un6mlc" path="res://scripts/CurveManager.cs" id="5_85g3d"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogj48"]
+size = Vector2(20, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02b0p"]
+
+[sub_resource type="Sky" id="Sky_65vgy"]
+sky_material = SubResource("ProceduralSkyMaterial_02b0p")
+
+[sub_resource type="Environment" id="Environment_ogj48"]
+background_mode = 2
+sky = SubResource("Sky_65vgy")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ogj48"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+albedo_color = Color(1, 0.21960784, 0.24313726, 1)
+emission_enabled = true
+emission = Color(0.80578357, 0.24466664, 0.12962371, 1)
+
+[node name="Main" type="Node3D" unique_id=71644600]
+script = ExtResource("1_tefeu")
+
+[node name="ControlPoints" type="Node3D" parent="." unique_id=1552324739]
+
+[node name="ControlPoint" parent="ControlPoints" unique_id=1120005438 instance=ExtResource("3_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.573939, 0.6, 0)
+
+[node name="ControlPoint2" parent="ControlPoints" unique_id=483342424 instance=ExtResource("3_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="ControlPoint3" parent="ControlPoints" unique_id=170653285 instance=ExtResource("3_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2)
+
+[node name="ControlPoint4" parent="ControlPoints" unique_id=1752564960 instance=ExtResource("3_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=511010118]
+transform = Transform3D(1, 0, 0, 0, 0.6427876, 0.7660445, 0, -0.7660445, 0.6427876, 0, 3.6756525, 4.457135)
+fov = 82.96079
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=459461095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = SubResource("PlaneMesh_ogj48")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=703727074]
+environment = SubResource("Environment_ogj48")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1567068191]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, -2, 0)
+shadow_enabled = true
+
+[node name="CurveManager" type="Node3D" parent="." unique_id=408721181 node_paths=PackedStringArray("LinearCurveNode", "CatmullRomCurveNode", "BezierCurveNode", "PointerNode")]
+script = ExtResource("5_85g3d")
+LinearCurveNode = NodePath("../CurveLinear")
+CatmullRomCurveNode = NodePath("../CurveCatmullRom")
+BezierCurveNode = NodePath("../CurveBezier")
+PointerNode = NodePath("../Pointer")
+
+[node name="CurveLinear" type="Node3D" parent="." unique_id=1934724308]
+script = ExtResource("1_tbgi4")
+CurvePointScene = ExtResource("4_85g3d")
+
+[node name="CurveCatmullRom" type="Node3D" parent="." unique_id=1811413411]
+script = ExtResource("2_tefeu")
+CurvePointScene = ExtResource("4_85g3d")
+
+[node name="CurveBezier" type="Node3D" parent="." unique_id=421663353]
+script = ExtResource("3_o6xl0")
+CurvePointScene = ExtResource("4_85g3d")
+
+[node name="Pointer" type="Node3D" parent="." unique_id=2012353629]
+script = ExtResource("4_tipki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pointer" unique_id=1536673166]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_ogj48")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
