@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://mirdts3eg28o"]
+
+[ext_resource type="Script" uid="uid://cuskxoxwc2040" path="res://Scripts/ParticleManager.cs" id="1_jjgbg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
+
+[sub_resource type="Sky" id="Sky_jjgbg"]
+sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
+
+[sub_resource type="Environment" id="Environment_7u77a"]
+background_mode = 2
+sky = SubResource("Sky_jjgbg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7u77a"]
+size = Vector3(17, 0.5, 16)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+albedo_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+metallic = 0.5
+roughness = 0.5
+
+[node name="Main" type="Node3D" unique_id=317460150]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=754966867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+fov = 90.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1536535001]
+transform = Transform3D(0.70710677, -0.35355338, 0.6123724, 0, 0.8660254, 0.5, -0.70710677, -0.35355338, 0.6123724, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=994917400]
+environment = SubResource("Environment_7u77a")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=2144330434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, -3.5)
+mesh = SubResource("BoxMesh_7u77a")
+surface_material_override/0 = SubResource("StandardMaterial3D_bo1nx")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1508192387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+amount = 500
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1644834820]
+
+[node name="Label" type="Label" parent="UI" unique_id=1433339279]
+offset_left = 20.0
+offset_right = 476.0
+offset_bottom = 50.0
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 2
+text = "UI LABEL"
+vertical_alignment = 1
+
+[node name="ParticleManager" type="Node3D" parent="." unique_id=81823374]
+script = ExtResource("1_jjgbg")

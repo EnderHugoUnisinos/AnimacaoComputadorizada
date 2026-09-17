@@ -32,7 +32,7 @@ public partial class Pointer : Node3D
 
 		foreach (Node child in curveNode.GetChildren())
 		{
-			if (child is Node3D point && point.Visible)
+			if (child is Node3D point)
 			{
 				CurvePoints.Add(point);
 			}

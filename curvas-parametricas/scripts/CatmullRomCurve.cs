@@ -1,20 +1,20 @@
 using Godot;
 using System;
 using System.Numerics;
-using System.Collections.Generic;
 using Vector3 = Godot.Vector3;
 using Vector4 = System.Numerics.Vector4;
 using Matrix4x4 = System.Numerics.Matrix4x4;
+using System.Collections.Generic; // ← este aqui resolve o erro
 
 public partial class CatmullRomCurve : Curve3D
 {
 	private static Matrix4x4 CreateCatmullRomMatrix()
 	{
 		return new Matrix4x4(
-			-0.5f,  1.5f, -1.5f,  0.5f,
-			 1.0f, -2.5f,  2.0f, -0.5f,
-			-0.5f,  0.0f,  0.5f,  0.0f,
-			 0.0f,  1.0f,  0.0f,  0.0f
+			-0.5f,  1.0f, -0.5f,  0.0f,   // Linha 1 = elementos das colunas 1 a 4
+		 	1.5f, -2.5f,  0.0f,  1.0f,   // Linha 2
+			-1.5f,  2.0f,  0.5f,  0.0f,   // Linha 3
+			 0.5f, -0.5f,  0.0f,  0.0f    // Linha 4
 		);
 	}
 
@@ -67,6 +67,19 @@ public partial class CatmullRomCurve : Curve3D
 		}
 
 		GD.Print("Pontos da curva Catmull-Rom gerados.");
+	}
+
+
+	// por algum motivo, se matrixmult estiver somente em Curve3D, a curva resultante ignora p0, começa no meio de todos os p
+	// segue para p2, volta para p0, vair para p3 e termina em p1 ... ???
+	private Vector4 MatrixMult(Matrix4x4 m, Vector4 t)
+	{
+		return new Vector4(
+			Vector4.Dot(new Vector4(m.M11, m.M12, m.M13, m.M14), t),
+			Vector4.Dot(new Vector4(m.M21, m.M22, m.M23, m.M24), t),
+			Vector4.Dot(new Vector4(m.M31, m.M32, m.M33, m.M34), t),
+			Vector4.Dot(new Vector4(m.M41, m.M42, m.M43, m.M44), t)
+		);
 	}
 
 }

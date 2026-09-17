@@ -41,7 +41,7 @@
 
 ## Link para a Build
 
-🔗 [https://usuario.itch.io/nome-do-jogo](https://usuario.itch.io/nome-do-jogo)
+🔗 [https://ender-hugo.itch.io/curvas-parametricas](https://ender-hugo.itch.io/curvas-parametricas)
 
 ---
 
