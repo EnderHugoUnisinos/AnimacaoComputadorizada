@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://blgeq1drqox3r"]
+
+[ext_resource type="PackedScene" uid="uid://bcc8l3i3et6oh" path="res://model/SuzanneShapekeys.glb" id="1_p70f2"]
+[ext_resource type="Script" uid="uid://b3ypqflj884nu" path="res://scripts/Suzanne.cs" id="2_jmmf2"]
+
+[node name="SuzanneShapekeys" unique_id=99998053 instance=ExtResource("1_p70f2")]
+script = ExtResource("2_jmmf2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=509978425]
+
+[node name="Label0" type="Label" parent="CanvasLayer" index="0" unique_id=1684317673]
+offset_left = 376.0
+offset_top = 578.0
+offset_right = 527.0
+offset_bottom = 617.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 28
+text = "Happy  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label1" type="Label" parent="CanvasLayer" index="1" unique_id=1242601699]
+offset_left = 526.0
+offset_top = 578.0
+offset_right = 653.0
+offset_bottom = 617.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 28
+text = "Sad"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" index="2" unique_id=39492646]
+offset_left = 659.0
+offset_top = 578.0
+offset_right = 809.0
+offset_bottom = 617.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 28
+text = "Surprised"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="CanvasLayer" index="3" unique_id=1055978343]
+offset_right = 180.0
+offset_bottom = 38.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="CanvasLayer" index="4" unique_id=1682321004]
+offset_left = 927.99994
+offset_top = 18.0
+offset_right = 1140.6001
+offset_bottom = 93.0
+text = ": Play/Pause animation
+: Next/Previous Shapekey
+: Increase/Decrease Value"
+
+[node name="Instructions2" type="Label" parent="CanvasLayer" index="5" unique_id=640819164]
+offset_left = 877.0
+offset_top = 18.0
+offset_right = 925.60004
+offset_bottom = 93.0
+text = "Space	
+←→
+↑ ↓"
+horizontal_alignment = 1
