@@ -36,7 +36,7 @@
 
 ## Link para a Build
 
-🔗 [https://usuario.itch.io/sistemas-de-particulars](https://usuario.itch.io/nome-do-jogo)
+🔗 [https://ender-hugo.itch.io/sistemas-de-particulas](https://ender-hugo.itch.io/sistemas-de-particulas)
 
 ---
 

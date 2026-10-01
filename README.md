@@ -9,7 +9,8 @@ Repositório com os projetos desenvolvidos para a Atividade Acadêmica **Animaç
 | Projeto                       | Engine / Linguagem | Descrição breve                             |
 | ----------------------------- | ------------------ | ------------------------------------------- |
 | `01-curvas-parametricas`      | Godot 4.7 (C#)     | Visualização interativa de trajetorias      |
-| `01-sistemas-de-particulas`   | Godot 4.7 (C#)     | Implementação de sistemas de particulas     |
+| `02-sistemas-de-particulas`   | Godot 4.7 (C#)     | Implementação de sistemas de particulas     |
+| `03-sistemas-de-particulas`   | Godot 4.7 (C#)     | Demonstração de Shapekeys		   |
 
 
 ---
