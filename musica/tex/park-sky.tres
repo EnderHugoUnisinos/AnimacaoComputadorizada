@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" format=3 uid="uid://djw2kfuequik5"]
+
+[ext_resource type="Texture2D" uid="uid://dfhdhg7jxuj4o" path="res://tex/street_lamp_4k.exr" id="1_ywjgx"]
+
+[resource]
+panorama = ExtResource("1_ywjgx")

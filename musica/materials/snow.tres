@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqmla3bfj1nv8"]
+
+[ext_resource type="Texture2D" uid="uid://cv7tj0hpv3npj" path="res://tex/closeup-texture-fresh-white-snow-surface_181624-56362.png" id="1_q61p7"]
+
+[resource]
+albedo_texture = ExtResource("1_q61p7")

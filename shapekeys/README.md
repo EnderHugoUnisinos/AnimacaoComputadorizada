@@ -4,7 +4,7 @@
 
 ## Descrição do Projeto
 
-> Este jogo foi desenvolvido como parte da disciplina *Animação Computadorizada* com o objetivo de explorar a implementação de sistemas de partículas.
+> Este jogo foi desenvolvido como parte da disciplina *Animação Computadorizada* com o objetivo de explorar a implementação de shapekeys.
 
 ---
 
@@ -13,7 +13,7 @@
 
 | Arquivo               | Descrição                                                   |
 |-----------------------|-------------------------------------------------------------|
-| `Suzanne.cs`  	| Captura o input do jogador e modifica o valor das shapekeys |
+| `Suzanne.cs`  	    | Captura o input do jogador e modifica o valor das shapekeys |
 
 ---
 ## Informações Técnicas

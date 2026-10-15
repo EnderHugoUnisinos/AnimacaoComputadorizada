@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://bax26h2diq8v2"]
+
+[ext_resource type="Script" uid="uid://dghj8hkj3gnhk" path="res://script/MainScript.gd" id="1_1nqs0"]
+[ext_resource type="AudioStream" uid="uid://dxpfhbhy5664g" path="res://musica/a_good_song_never_dies.mp3" id="3_1nqs0"]
+[ext_resource type="Script" uid="uid://dt37ohr2ug2p2" path="res://script/AudioReactive.gd" id="3_yxlcp"]
+[ext_resource type="Material" uid="uid://djw2kfuequik5" path="res://tex/park-sky.tres" id="4_ebg2g"]
+[ext_resource type="PackedScene" uid="uid://bw8fte6lqyo82" path="res://models/set-a_good_song_never_dies.glb" id="5_2ofn6"]
+[ext_resource type="Material" uid="uid://b16vbqxx6egh" path="res://materials/water.tres" id="6_xa025"]
+[ext_resource type="Texture2D" uid="uid://u7bjyfyju06x" path="res://tex/rain_sprite.png" id="7_36rkl"]
+[ext_resource type="Texture2D" uid="uid://dnlji6apevapk" path="res://tex/trees/SPRT-tree_1.png" id="8_fs0b5"]
+[ext_resource type="Texture2D" uid="uid://dh8xu6mqxmf3w" path="res://tex/trees/SPRT-tree_2.png" id="9_ma7h6"]
+[ext_resource type="Texture2D" uid="uid://dtecbwhpneh20" path="res://tex/trees/SPRT-tree_3.png" id="10_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://0djbhcr1c1s4" path="res://tex/trees/SPRT-tree_4.png" id="11_gsxep"]
+[ext_resource type="Texture2D" uid="uid://bgr7823hefoja" path="res://tex/trees/SPRT-tree_5.png" id="12_v0vrg"]
+[ext_resource type="Texture2D" uid="uid://n3w5ye047coy" path="res://tex/trees/SPRT-tree_6.png" id="13_dg70y"]
+[ext_resource type="Texture2D" uid="uid://cqbtl5l41v8jx" path="res://tex/trees/SPRT-tree_7.png" id="14_pnhog"]
+[ext_resource type="Texture2D" uid="uid://ceq8ka4tvxoy5" path="res://tex/trees/SPRT-tree_8.png" id="15_2c4at"]
+[ext_resource type="Texture2D" uid="uid://c478we2snpnp5" path="res://tex/trees/SPRT-tree_9.png" id="16_g6wdg"]
+[ext_resource type="Texture2D" uid="uid://db1ptq5mmrp1s" path="res://tex/trees/SPRT-tree_10.png" id="17_hq6as"]
+[ext_resource type="Texture2D" uid="uid://ce1nphylr65w5" path="res://tex/trees/SPRT-tree_11.png" id="18_kxyth"]
+[ext_resource type="ArrayMesh" uid="uid://c7qst3yjq0lhy" path="res://models/man/man_mesh.res" id="19_cobve"]
+[ext_resource type="PackedScene" uid="uid://bp8lnfoi808cq" path="res://scenes/RainImpactDetector.tscn" id="20_cmqll"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_65vgy"]
+size = Vector3(11, 0.49365234, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3ic2"]
+size = Vector3(1.4018066, 2.1000001, 0.92275393)
+
+[sub_resource type="Sky" id="Sky_iqwh2"]
+sky_material = ExtResource("4_ebg2g")
+
+[sub_resource type="Environment" id="Environment_ogj48"]
+background_mode = 2
+background_energy_multiplier = 0.01
+sky = SubResource("Sky_iqwh2")
+ambient_light_source = 3
+tonemap_mode = 2
+ssr_enabled = true
+ssr_fade_out = 0.088388234
+ssil_radius = 1.95
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+glow_strength = 0.6
+glow_bloom = 0.1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.2008
+fog_sky_affect = 0.45
+volumetric_fog_enabled = true
+volumetric_fog_sky_affect = 0.6
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kvplf"]
+lifetime_randomness = 0.2
+emission_shape_scale = Vector3(3, 0.1, 2)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+collision_mode = 2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d7wf2"]
+material = ExtResource("6_xa025")
+radius = 0.005
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65vgy"]
+transparency = 1
+albedo_texture = ExtResource("7_36rkl")
+roughness = 0.5
+roughness_texture = ExtResource("7_36rkl")
+roughness_texture_channel = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogj48"]
+material = SubResource("StandardMaterial3D_65vgy")
+
+[node name="a-good-song-never-dies" type="Node3D" unique_id=344632210]
+script = ExtResource("1_1nqs0")
+
+[node name="ImpactDetect" parent="." unique_id=52994794 instance=ExtResource("20_cmqll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -1)
+rain_radius = 4.0
+splashes_per_second = 50.0
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1739293301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1025177385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2393856, 0)
+shape = SubResource("BoxShape3D_65vgy")
+
+[node name="Booth" type="StaticBody3D" parent="." unique_id=1481423317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0644232, 0.6, -2.1442342)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Booth" unique_id=1613220710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3249756, 0, 0.111377)
+shape = SubResource("BoxShape3D_w3ic2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1922519219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4763475, 0)
+stream = ExtResource("3_1nqs0")
+autoplay = true
+script = ExtResource("3_yxlcp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=358313483]
+environment = SubResource("Environment_ogj48")
+
+[node name="set-a_good_song_never_dies" parent="." unique_id=1495949888 instance=ExtResource("5_2ofn6")]
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="set-a_good_song_never_dies" unique_id=1778947717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16671622, 0.9551736, -2.1655388)
+size = Vector3(0.95581055, 1.8920593, 1.1855469)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=342863726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928, 3)
+fov = 45.0
+
+[node name="RedLight" type="AreaLight3D" parent="." unique_id=22178897]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, -4.5330706)
+light_color = Color(0.9999997, 0.27152497, 0.12426921, 1)
+light_size = 0.01
+light_specular = 1.5
+shadow_enabled = true
+shadow_bias = 0.03
+shadow_opacity = 0.8
+shadow_blur = 5.0
+area_size = Vector2(0.995872, 2.501893)
+
+[node name="Light2" type="SpotLight3D" parent="." unique_id=314717091]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.8594317, 2.1077585, -3.3814888)
+light_color = Color(0.99999934, 0.8139507, 0.6201176, 1)
+light_size = 0.1
+shadow_enabled = true
+spot_range = 4.0
+spot_angle = 50.0
+spot_angle_attenuation = 1.5691681
+
+[node name="Light1" type="SpotLight3D" parent="." unique_id=354348966]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.6595623, 2.0973482, -5.005006)
+light_color = Color(0.99999934, 0.8139507, 0.6201176, 1)
+light_size = 0.1
+shadow_enabled = true
+spot_range = 4.0
+spot_angle = 50.0
+spot_angle_attenuation = 1.4142138
+
+[node name="Rain" type="GPUParticles3D" parent="." unique_id=671360092]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, 1.2462337, 2.9768252, -2.0722485)
+amount = 500
+lifetime = 2.5
+speed_scale = 2.0
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_kvplf")
+draw_pass_1 = SubResource("CapsuleMesh_d7wf2")
+
+[node name="Puddles" type="MeshInstance3D" parent="." unique_id=1776796766]
+transform = Transform3D(6.1473794, 0, 0, 0, 1, 0, 0, 0, 6.1473794, 0.59872186, 0.012232542, 0.57270074)
+mesh = SubResource("PlaneMesh_ogj48")
+
+[node name="Lightning" type="DirectionalLight3D" parent="." unique_id=1618741776]
+transform = Transform3D(1, 0, 0, 0, -0.84004074, 0.54252326, 0, -0.54252326, -0.84004074, 0, 1.5905203, 0)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="Trees" type="Node3D" parent="." unique_id=1259291639]
+
+[node name="Sprite3D2" type="Sprite3D" parent="Trees" unique_id=1746771183]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 0.35648763, 1.4580108, -5.955581)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("8_fs0b5")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Trees" unique_id=1781397243]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 3.5879936, 1.4580108, -5.955581)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("9_ma7h6")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Trees" unique_id=159999853]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 0.9967891, 1.340985, -7.090024)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("10_e2s0e")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Trees" unique_id=2102412233]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 3.0729222, 1.4580108, -4.6599464)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("11_gsxep")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Trees" unique_id=2100531037]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 4.779808, 1.4580108, -5.1827073)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("12_v0vrg")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Trees" unique_id=1927127232]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 3.4544592, 1.4580108, -6.933785)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("13_dg70y")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Trees" unique_id=1586141642]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 3.7373037, 1.4580108, -5.1608505)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("14_pnhog")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Trees" unique_id=558540218]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 4.9076095, 1.4580108, -3.8647738)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("15_2c4at")
+
+[node name="Sprite3D10" type="Sprite3D" parent="Trees" unique_id=711944895]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 5.5739007, 1.4580108, -6.2073803)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("16_g6wdg")
+
+[node name="Sprite3D13" type="Sprite3D" parent="Trees" unique_id=515550521]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 2.4574144, 0.55239713, -10.2106695)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("17_hq6as")
+
+[node name="Sprite3D14" type="Sprite3D" parent="Trees" unique_id=1556237259]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -2.8106031, -0.047169805, -9.7461815)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("17_hq6as")
+
+[node name="Sprite3D11" type="Sprite3D" parent="Trees" unique_id=667115892]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 4.9076095, 0.12725794, -9.631747)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("18_kxyth")
+
+[node name="Sprite3D12" type="Sprite3D" parent="Trees" unique_id=2075521851]
+transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 4.227871, 1.4580108, -7.1272726)
+modulate = Color(0, 0, 0, 1)
+billboard = 2
+texture = ExtResource("15_2c4at")
+
+[node name="CH-Man" type="MeshInstance3D" parent="." unique_id=479537542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018696345, 0.8299655, -2.0183215)
+mesh = ExtResource("19_cobve")
+"blend_shapes/Key 1" = 0.0
+"blend_shapes/Key 2" = 0.0
+"blend_shapes/Key 3" = 0.0
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="song_finished"]

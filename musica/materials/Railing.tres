@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://3t6yduuvaktt"]
+
+[resource]
+resource_name = "Railing"
+cull_mode = 2
+albedo_color = Color(0.75315315, 0.6729919, 0.5357543, 1)
+metallic = 1.0
+roughness = 0.3

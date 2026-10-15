@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bp8lnfoi808cq"]
+
+[ext_resource type="Script" uid="uid://ctp384e4ska73" path="res://script/RainImpactDetector.gd" id="1_3ovvg"]
+[ext_resource type="PackedScene" uid="uid://dt50tukilwxsy" path="res://scenes/RainSplash.tscn" id="2_7ijms"]
+
+[node name="ImpactDetect" type="Node3D" unique_id=52994794]
+script = ExtResource("1_3ovvg")
+splash_scene = ExtResource("2_7ijms")

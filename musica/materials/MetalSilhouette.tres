@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j4u0kqntj037"]
+
+[resource]
+resource_name = "MetalSilhouette"
+cull_mode = 2
+albedo_color = Color(0.3797496, 0.3797496, 0.3797496, 1)
+metallic = 1.0
+roughness = 0.0

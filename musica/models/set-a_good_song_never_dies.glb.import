@@ -1,0 +1,103 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bw8fte6lqyo82"
+path="res://.godot/imported/set-a_good_song_never_dies.glb-958dd3e5beb524a06a209d15651a000f.scn"
+
+[deps]
+
+source_file="res://models/set-a_good_song_never_dies.glb"
+dest_files=["res://.godot/imported/set-a_good_song_never_dies.glb-958dd3e5beb524a06a209d15651a000f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Booth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/Booth.tres",
+"use_external/path": "uid://bqrtmfgqffjew"
+},
+"BoothMetal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/BoothMetal.tres",
+"use_external/path": "uid://dwj7i13i62xbq"
+},
+"Floor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/Floor.tres",
+"use_external/path": "uid://de7p4h02lwowp"
+},
+"Glass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/glass.tres",
+"use_external/path": "uid://b4bqi0ay84icj"
+},
+"Lamp": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/lamp.tres",
+"use_external/path": "uid://bj8a6ebylqry"
+},
+"MetalSilhouette": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/MetalSilhouette.tres",
+"use_external/path": "uid://j4u0kqntj037"
+},
+"Post": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/Post.tres",
+"use_external/path": "uid://dx5dsvfcl3px5"
+},
+"PureMatteSilhouette": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/PureMatteSilhouette.tres",
+"use_external/path": "uid://b723mdoufvdov"
+},
+"Railing": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/Railing.tres",
+"use_external/path": "uid://3t6yduuvaktt"
+},
+"ShinierSillhouette": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/ShinierSillhouette.tres",
+"use_external/path": "uid://c7dqj86oqo272"
+},
+"Snow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/snow.tres",
+"use_external/path": "uid://dqmla3bfj1nv8"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

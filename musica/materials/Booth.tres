@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqrtmfgqffjew"]
+
+[resource]
+resource_name = "Booth"
+cull_mode = 2
+albedo_color = Color(0.4936601, 0.43125796, 0.32868844, 1)
+metallic = 0.2
+roughness = 0.8
