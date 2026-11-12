@@ -10,8 +10,9 @@ Repositório com os projetos desenvolvidos para a Atividade Acadêmica **Animaç
 | ----------------------------- | ----------------------| ----------------------------------------------|
 | `01-curvas-parametricas`      | Godot 4.7 (C#)        | Visualização interativa de trajetorias        |
 | `02-sistemas-de-particulas`   | Godot 4.7 (C#)        | Implementação de sistemas de particulas       |
-| `03-shapekeys`	            | Godot 4.7 (C#)        | Demonstração de Shapekeys                     |
-| `04-musica		    `       | Godot 4.7 (GDScript)  | Animações Utilizando o Espectro Sonoro        |
+| `03-shapekeys`                | Godot 4.7 (C#)        | Demonstração de Shapekeys                 	|
+| `04-musica		`       | Godot 4.7 (GDScript)  | Animações Utilizando o Espectro Sonoro    	|
+| `05-characteranimation`       | Godot 4.7 (GDScript)  | Animação de personagem com esqueleto    	|
 
 
 ---

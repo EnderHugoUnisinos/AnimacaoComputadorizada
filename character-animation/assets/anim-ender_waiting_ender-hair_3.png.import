@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj1ditgo3h5g6"
-path.s3tc="res://.godot/imported/StockCake-City_night_park-1141814-standard.jpg-a9fdda4d49e6b1c1440c815ed105a665.s3tc.ctex"
+uid="uid://djyd21o3pc5om"
+path.s3tc="res://.godot/imported/anim-ender_waiting_ender-hair_3.png-4ec80ab1aec44aa37496811c4b6df803.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "45ec1bbdcaff83f08feba6e61a333f20"
+}
 
 [deps]
 
-source_file="res://tex/StockCake-City_night_park-1141814-standard.jpg"
-dest_files=["res://.godot/imported/StockCake-City_night_park-1141814-standard.jpg-a9fdda4d49e6b1c1440c815ed105a665.s3tc.ctex"]
+source_file="res://assets/anim-ender_waiting_ender-hair_3.png"
+dest_files=["res://.godot/imported/anim-ender_waiting_ender-hair_3.png-4ec80ab1aec44aa37496811c4b6df803.s3tc.ctex"]
 
 [params]
 

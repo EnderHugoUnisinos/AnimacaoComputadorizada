@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cf4ny5ygk7js7"]
+
+[ext_resource type="PackedScene" uid="uid://0hl2el6bwlxx" path="res://resources/anim_ender_waiting.scn" id="1_o5qli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02b0p"]
+
+[sub_resource type="Sky" id="Sky_65vgy"]
+sky_material = SubResource("ProceduralSkyMaterial_02b0p")
+
+[sub_resource type="Environment" id="Environment_ogj48"]
+background_mode = 2
+sky = SubResource("Sky_65vgy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogj48"]
+size = Vector2(6, 6)
+
+[node name="Node3D" type="Node3D" unique_id=626357799]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1426668340]
+transform = Transform3D(0.9929099, 0.021076538, -0.116985776, 0, 0.98415536, 0.17730863, 0.118869215, -0.1760515, 0.9771776, -0.3193419, 1.5342089, 2.3679488)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=80606040]
+environment = SubResource("Environment_ogj48")
+
+[node name="anim-ender_waiting2" parent="." unique_id=190855687 instance=ExtResource("1_o5qli")]
+
+[node name="Control" type="Control" parent="." unique_id=1948374234]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inst1" type="Label" parent="Control" unique_id=101424336]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 21.0
+offset_right = 219.0
+offset_bottom = 44.0
+text = "Impatient (Toggle) : Q / 1"
+
+[node name="Inst2" type="Label" parent="Control" unique_id=127612598]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 44.0
+offset_right = 219.0
+offset_bottom = 67.0
+text = "Look around : W / 2"
+
+[node name="Inst3" type="Label" parent="Control" unique_id=188268135]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 67.0
+offset_right = 219.0
+offset_bottom = 90.0
+text = "Stretch : E / 3"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=107647506]
+mesh = SubResource("PlaneMesh_ogj48")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1780935710]
+transform = Transform3D(0.7115164, -0.6582979, 0.24574082, 0.12940954, 0.46650642, 0.87500006, -0.69065017, -0.5907755, 0.41711694, 0, 3.8806272, 0)
+shadow_enabled = true
